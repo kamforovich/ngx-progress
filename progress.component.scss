@@ -1,13 +1,13 @@
 .progress {
 	width: 500px;
 	height: 30px;
-	border: 1px solid gray;
+	background-color: #E2E5E7;
 	border-radius: 50px;
 	overflow: hidden;
 }
 
 .progress-bar {
 	height: 100%;
-	border-radius: 50px 0 0 50px;
-	background-color: cyan;
+	border-radius: 50px;
+	background-color: var(--color-basic);
 }
