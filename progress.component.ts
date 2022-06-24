@@ -6,5 +6,15 @@ import { Component, Input } from '@angular/core';
 })
 export class ProgressComponent{
 	@Input() progress;
+	@Input() bgColor;
+	@Input() barColor;
+	@Input() progressType: any;
+	@Input() dashoffset;
+	@Input() progresNumber;
+	
+	
+
+
+	
 	constructor() {}
 }

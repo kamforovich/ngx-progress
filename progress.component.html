@@ -1,3 +1,33 @@
-<div class="progress">
-	<div class="progress-bar" [style.width]="progress + '%'"></div>
+<div *ngIf="progressType == 'linear'" class="progress-bar" [style.background-color]="bgColor">
+	<div class="progress-bar__bar" [style.background-color]="barColor" [style.width]="progress + '%'"></div>
 </div>
+
+<div *ngIf="progressType == 'circular'" class="progress-bar__circular">
+		<svg xmlns="http://www.w3.org/2000/svg"
+		viewBox="-1 -1 34 34">
+	
+		<circle cx="16" cy="16" r="15.9155"
+				class="progress-bar__background" />
+		
+		<circle [style.stroke-dashoffset]="dashoffset" cx="16" cy="16" r="15.9155"
+				class="progress-bar__progress 
+						js-progress-bar" />
+		</svg>
+</div>
+
+<div *ngIf="progressType == 'circular-number'" class="progress-bar__circular-number">
+	<svg xmlns="http://www.w3.org/2000/svg"
+	viewBox="-1 -1 34 34">
+
+	<circle cx="16" cy="16" r="15.9155"
+			class="progress-bar__background" />
+	
+	<circle [style.stroke-dashoffset]="dashoffset" cx="16" cy="16" r="15.9155"
+			class="progress-bar__progress 
+					js-progress-bar" />
+	</svg>
+	<span class="progress-bar__number" *ngIf="progresNumber">{{progresNumber}}</span>	
+</div>
+
+
+
